@@ -1,15 +1,17 @@
+"use client";
 import styles from "../styles/Home.module.css"
 import Input from "../components/Input"
-import Button from "../components/Button"
+import { useRouter } from "next/navigation"
 
 export default function Home() {
+    const router = useRouter();
     return (
         <div className={styles.container}>
         <div className={styles.login}>
             <h2>Sign In</h2>
-            <Input text="Username ou Email" />
-            <Input text="Password" />
-            <Button text="Login" />
+            <Input type="text" text="Username or Email" />
+            <Input id="password" type="password" text="Password" />
+            <button className={styles.button} onClick={() => router.push("/sobre")}>Login</button>
             <p>Connect with</p>
                 <div className={styles.socialmedia}>
                     <div className={styles.media}>
@@ -23,10 +25,9 @@ export default function Home() {
                     </div>
                 </div>
                     <p>Or</p>
-            <p className={styles.link}>
-            Don't have an account? <a href="/signup">Sign Up</a>
-            </p>
-
+                <nav>
+                <p>Don't have an account? <button className={styles.link} onClick={() => router.push("/signout")}>Sign Out</button></p>
+                </nav>
         </div>
     </div>
     )
