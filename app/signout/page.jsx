@@ -29,7 +29,7 @@ export default function Signout() {
                 </div>
                     <p>Or</p>
                 <nav>
-                <p>Já tem uma conta? <button className={styles.link} onClick={() => router.push("/")}>Faça login</button></p>
+                <p>Have an account?? <button className={styles.link} onClick={() => router.push("/")}>Faça login</button></p>
             </nav>
         </div>
     </div>
