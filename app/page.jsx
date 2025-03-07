@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css"
 import Input from "../components/Input"
 import Button from "../components/Button"
-import Midia from "../components/Midia"
 
 export default function Home() {
     return (
@@ -11,14 +10,21 @@ export default function Home() {
             <Input text="Username ou Email" />
             <Input text="Password" />
             <Button text="Login" />
-            <div className={styles.divider}>
-            <Midia image="Facebook" />
-            <Midia image= "google.png" />
-            <Midia image="Apple" />
-            <Midia image="Firefox" />
-            </div>
+            <p>Connect with</p>
+                <div className={styles.socialmedia}>
+                    <div className={styles.media}>
+                        <img src="/google.png"/>
+                    </div>
+                    <div className={styles.media}>
+                        <img src="/firefoxx.png"/>
+                    </div>
+                    <div className={styles.media}>
+                        <img src="/apple.png"/>
+                    </div>
+                </div>
+                    <p>Or</p>
             <p className={styles.link}>
-            Não tem uma conta? <a href="/signup">Sign Up</a>
+            Don't have an account? <a href="/signup">Sign Up</a>
             </p>
 
         </div>

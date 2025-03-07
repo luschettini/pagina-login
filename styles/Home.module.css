@@ -9,11 +9,17 @@
     
 }
 
+.login h2 {
+    font-size: 2.3rem;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
 .login {
-    height: 38vh;
-    width: 50vh;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.514);
+    height: 75vh;
+    width: 100vh;
+    border-radius: 16px;
+    background: hsla(0, 0%, 100%, 0.51);
     color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -24,16 +30,41 @@
 }
 
 .login p {
-    font-size: 0.8em;
+    font-size: 1.1rem;
 }
 
 .link a{
     color: #0070f3
 }
 
-.divider {
+
+.socialmedia {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    flex-direction: row;
+    width: 5rem;
+    height: 5rem;
+    gap: 2rem;
+}
+
+.media {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 1rem;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(154, 141, 149, 0.238);
+    border-radius: 100%;
+}
+
+.media:hover {
+    border: 2px solid rgb(0, 0, 0);
+    transition: 0.1s;
+}
+.media img {
+    width: 2rem;
+    height: 2rem;
 }
