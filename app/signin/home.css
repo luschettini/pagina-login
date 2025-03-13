@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(../public/image-aura.png);
+    background-image: url(../../public/image-aura.png);
     background-size: cover;
     
 }
@@ -17,10 +17,10 @@
 }
 
 .login {
-    height: 75vh;
+    height: 82vh;
     width: 100vh;
     border-radius: 16px;
-    background: hsla(0, 0%, 100%, 0.51);
+    background: hsla(338, 99%, 73%, 0.21);
     color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -74,11 +74,11 @@
 
 .button {
     font-size: 1.2rem;
-    width: 33rem;
+    width: 31rem;
     height: 3.0rem;
     border: solid 1px black;
     border-radius: 20px;
-    background-color: #ffd2eb;
+    background-color: #edb0d1;
 }
 
 .button:hover {

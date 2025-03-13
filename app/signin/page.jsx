@@ -1,20 +1,18 @@
 "use client";
 
-import  "./signout.css"
+import styles from "./home.css"
 import Input from "../../components/Input"
 import { useRouter } from "next/navigation"
 
-
-export default function Signout() {
+export default function Home() {
     const router = useRouter();
     return (
         <div className="container">
         <div className="login">
-            <h2>Sign Out</h2>
-            <Input tipo="text" text="Username" />
-            <Input id="password" tipo="password" text="Password" />
-            <Input id="confirmPass" tipo="password" text="Confirm Password" />
-            <button className="button" onClick={() => router.push("/")}>Create Account</button>
+            <h2>Sign In</h2>
+            <Input type="text" text="Username or Email" />
+            <Input id="password" type="password" text="Password" />
+            <button className="button" onClick={() => router.push("/signin")}>Login</button>
             <p>Connect with</p>
                 <div className="socialmedia">
                     <div className="media">
@@ -29,9 +27,9 @@ export default function Signout() {
                 </div>
                     <p>Or</p>
                 <nav>
-                <p>Have an account?? <button className="link" onClick={() => router.push("/signin")}>Faça login</button></p>
-            </nav>
+                <p>Don't have an account? <button className="link" onClick={() => router.push("/signout")}>Sign Out</button></p>
+                </nav>
         </div>
     </div>
-    ) 
+    )
 }
