@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./home.css"
+import "./home.css"
 import Input from "../../components/Input"
 import { useRouter } from "next/navigation"
 
@@ -12,7 +12,7 @@ export default function Home() {
             <h2>Sign In</h2>
             <Input type="text" text="Username or Email" />
             <Input id="password" type="password" text="Password" />
-            <button className="button" onClick={() => router.push("/signin")}>Login</button>
+            <button className= "button" onClick={() => router.push("/profile")}>Login</button>
             <p>Connect with</p>
                 <div className="socialmedia">
                     <div className="media">
