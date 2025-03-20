@@ -2,66 +2,59 @@
 
 import "../signout/signout.css";
 import "../signout/error.css";
-import "/"
 import Input from "../../components/Input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Signout() {
   const router = useRouter();
-  const [password, setPassword] = useState(""); // Armazena a senha
-  const [confirmPass, setConfirmPass] = useState(""); // Armazena a confirmação de senha
-  const [match, setMatch] = useState(null); // Verifica se as senhas coincidem
-  const [error, setError] = useState(null); // Armazena a mensagem de erro ou sucesso
+    const [input1, setInput1] = useState("");
+    const [input2, setInput2] = useState("");
+    const [match, setMatch] = useState(null);
+    const [error, setError] = useState(null);
 
   const handleCheck = () => {
-    console.log("Validando..."); 
-    if (password === "") {
+    if (input1 == "") {
       setMatch(false);
       setError("Preencha o campo de senha");
-    } else if (confirmPass === "") {
+  }
+  else if (input2 == "") {
       setMatch(false);
-      setError("Preencha o campo de confirmação de senha");
-    } else if (password.length < 6) {
+      setError("Preencha o campo de repetir senha");
+  }
+  else if (input1 !== input2) {
       setMatch(false);
-      setError("A senha deve ter no mínimo 6 caracteres");
-    } else if (password !== confirmPass) {
-      setMatch(false);
-      setError("As senhas não conferem");
-    } else {
-      setMatch(true); // Senhas conferem
+      setError("As senhas não coincidem");
+  }
+  else {
+      setMatch(true);
       setError("Sucesso");
-      console.log("Redirecionando..."); // Log para garantir que o redirecionamento está acontecendo
-      // Redireciona para a página de login após um pequeno atraso
-      setTimeout(() => {
-        console.log("Redirecionamento para /signin");
-        router.push("/signin");
-      }, 1000);
-    }
   };
+};
 
   return (
     <div className="container">
       <div className="login">
         <h2>Sign Out</h2>
-
         <Input tipo="text" text="Username" />
-        <Input 
-          id="password" 
-          tipo="password" 
-          text="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-        />
-        <Input 
-          id="confirmPass" 
-          tipo="password" 
-          text="Confirm Password" 
-          value={confirmPass} 
-          onChange={(e) => setConfirmPass(e.target.value)} 
-        />
+            <input
+                className="input"
+                title="Senha:"
+                value={input1}
+                placeholder="Password"
+                onChange={(e) => setInput1(e.target.value)}
+            />
+            <input
+                className="input"
+                title="Repita a senha:"
+                value={input2}
+                placeholder="Repeat password"
+                onChange={(e) => setInput2(e.target.value)}
+            />
+
         <button className="button" onClick={handleCheck}>Create Account</button>
-        {match !== null && <p className="error">{error}</p>} {/* Exibe mensagem de erro ou sucesso */}
+        {match !== null && <p className="error">{error}</p>} 
+
         <p>Connect with</p>
         <div className="socialmedia">
           <div className="media">
