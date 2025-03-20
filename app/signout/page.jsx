@@ -1,7 +1,6 @@
 "use client";
 
-import "../signout/signout.css";
-import "../signout/error.css";
+import "./signout.css";
 import Input from "../../components/Input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -36,23 +35,39 @@ export default function Signout() {
     <div className="container">
       <div className="login">
         <h2>Sign Out</h2>
-        <Input tipo="text" text="Username" />
-            <input
-                className="input"
-                title="Senha:"
-                value={input1}
-                placeholder="Password"
-                onChange={(e) => setInput1(e.target.value)}
-            />
-            <input
-                className="input"
-                title="Repita a senha:"
-                value={input2}
-                placeholder="Repeat password"
-                onChange={(e) => setInput2(e.target.value)}
-            />
 
-        <button className="button" onClick={handleCheck}>Create Account</button>
+        <div className="inputGroup">
+          <label className="label">Nome de Usuário</label>
+            <Input
+            tipo="text"
+            text="Digite seu nome de usuário"
+            value={username}
+            />
+          </div>
+
+        
+        <div className="inputGroup">
+          <label className="label">Senha</label>
+          <Input
+            id="password"
+            tipo="password"
+            text="Digite sua senha"
+            value={password}
+           />
+        </div>
+
+        <div className="inputGroupa">
+          <label className="label">Confirmar Senha</label>
+          <Input
+          id="confirmPass"
+          tipo="password"
+          text="Confirme sua senha"
+          value={confirmPassword}
+          />
+          </div>
+                            
+                      
+        <button className="button" onClick={() => router.push("/signin")}>Create Account</button>
         {match !== null && <p className="error">{error}</p>} 
 
         <p>Connect with</p>

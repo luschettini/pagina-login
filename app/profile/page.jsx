@@ -16,7 +16,20 @@ export default function Profile() {
             <Card title={"Descrição"} text={"Olá, meu nome é Luiza e sou uma desenvolvedora do curso de Desenvolvimento de Sistemas no SENAI;"} />
             <Card title={"Experiência"} text={"Desenvolvedora Full Stack;"} />
             <Card title={"Hobbies"} text={"No tempo livre adoro maratonar séries, brincar com minha sobrinha e sair com meus amigos."} />
+            <Card title={"Habilidades"} text={
+                    <div className="socialmedia">
+                        <div className="media">
+                            <img src="/google.png" alt="Google" />
+                        </div>
+                        <div className="media">
+                            <img src="/firefoxx.png" alt="Firefox" />
+                        </div>
+                        <div className="media">
+                            <img src="/apple.png" alt="Apple" />
+                        </div>
+                    </div>
+                } />
             </div>
         </div>
-    )
+    );
 }
